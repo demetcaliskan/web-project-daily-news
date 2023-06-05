@@ -32,7 +32,7 @@ function checkAuth() {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/v8/firebase.User
-      var uid = user.uid
+      const uid = user.uid
       const database_ref = database.ref('users')
       database_ref
         .child(uid)
@@ -52,17 +52,29 @@ function checkAuth() {
 }
 
 function displayWeather(weather, userData) {
+  const userTitle = document.getElementById('welcome')
+  userTitle.innerHTML = `Welcome ${userData.full_name}!`
+
   const temp = weather.current.temp
   const state = weather.current.weather[0].description
+  const iconSrc = `https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`
   const weatherDiv = document.getElementById('weather')
   const weatherTemp = document.createElement('p')
   const weatherTitle = document.createElement('p')
-  const userTitle = document.createElement('p')
-  userTitle.innerHTML = userData.full_name
+  const weatherAddress = document.createElement('p')
+  const weatherIcon = document.createElement('img')
   weatherTemp.innerHTML = `${temp} °C`
   weatherTitle.innerHTML = state
+  weatherAddress.innerHTML = `at ${userData.location.address}`
+  weatherIcon.src = iconSrc
+  weatherTemp.classList.add('weather-temp')
+  weatherTitle.classList.add('weather-title')
+  weatherAddress.classList.add('weather-title')
+  weatherIcon.classList.add('weather-icon')
+  weatherDiv.append(weatherIcon)
   weatherDiv.append(weatherTemp)
   weatherDiv.append(weatherTitle)
+  weatherDiv.append(weatherAddress)
 }
 
 function displayNews(articles) {

@@ -35,6 +35,7 @@ let map
 let latitude
 let longitude
 let country
+let address
 
 async function initMap() {
   // The location of Ankara
@@ -85,29 +86,36 @@ async function initMap() {
           }
         }
         const locationArr = data.plus_code.compound_code.split(' ')
+        address = `${locationArr[locationArr.length - 2]} ${
+          locationArr[locationArr.length - 1]
+        }`
         infoWindow.close()
-        infoWindow.setContent(
-          `Pin dropped at: ${locationArr[locationArr.length - 2]} ${
-            locationArr[locationArr.length - 1]
-          }`
-        )
+        infoWindow.setContent(`Pin dropped at: ${address}`)
         infoWindow.open(marker.map, marker)
       })
   })
 }
 
 function handleLocation(user) {
-  const database_ref = database.ref()
+  const database_ref = database.ref('users')
   const user_data = {
     location: {
       lat: latitude,
       lng: longitude,
+      address: address,
       country: country,
     },
   }
-  database_ref.child('users/' + user.uid).update(user_data)
-  alert('yeyy location pickedd!')
-  window.location.assign('/index.html')
+  database_ref
+    .child(user.uid)
+    .update(user_data)
+    .then(() => {
+      alert('yeyy location pickedd!')
+      window.location.assign('/index.html')
+    })
+    .catch((err) => {
+      alert('there was a problem!')
+    })
 }
 
 initMap()

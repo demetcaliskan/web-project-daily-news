@@ -38,24 +38,29 @@ function register() {
     .createUserWithEmailAndPassword(email, password)
     .then(function () {
       // Declare user variable
-      var user = auth.currentUser
-
-      // Add this user to Firebase Database
-      var database_ref = database.ref()
+      const user = auth.currentUser
 
       // Create User data
-      var user_data = {
+      const user_data = {
         email: email,
         full_name: full_name,
         last_login: Date.now(),
       }
 
       // Push to Firebase Database
-      database_ref.child('users/' + user.uid).set(user_data)
+      database
+        .ref('users/' + user.uid)
+        .set(user_data)
+        .then(() => {
+          alert('User Created!!')
+          window.location.assign('/location.html')
+        })
+        .catch((err) => {
+          alert('Problem occured!')
+          //window.location.assign('/location.html')
+        })
 
       // DOne
-      alert('User Created!!')
-      window.location.assign('/location.html')
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors
