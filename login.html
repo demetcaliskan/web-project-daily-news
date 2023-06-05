@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/auth.css" />
     <title>Daily News | Login</title>
   </head>
   <body>
     <header class="sticky-header">
       <a class="header-logo" href="index.html">Daily Local News</a>
       <nav class="header-nav">
-        <a class="header-nav-item" href="#discover" title="about">Discover</a>
-        <a class="header-nav-item" href="#education" title="resources"
-          >Resources</a
-        >
-        <a class="header-nav-item" href="login.html" title="login">Login</a>
         <a class="header-nav-item" href="register.html" title="register"
           >Register</a
         >
@@ -24,14 +20,44 @@
         >
       </nav>
     </header>
-    <main>
-      <h1>Get your local daily news right now!</h1>
-      <div>
-        <input id="email" placeholder="email" type="email" />
-        <input id="password" placeholder="password" type="password" />
-        <button onclick="login()">Login</button>
+    <main class="container">
+      <div class="row-layout">
+        <div class="little-container">
+          <img
+            class="square-image"
+            src="assets/coffee-study.jpeg"
+            alt="coffee-study"
+          />
+        </div>
+        <div class="col-layout auth-wrapper">
+          <h1 class="auth-title">
+            Continue your journey, each day brings new stories.
+          </h1>
+          <input
+            class="auth-input"
+            id="email"
+            placeholder="email"
+            type="email"
+          />
+          <input
+            class="auth-input"
+            id="password"
+            placeholder="password"
+            type="password"
+          />
+          <button class="auth-button" onclick="login()">Login</button>
+          <p>
+            Don't have an account? <a href="register.html">Register here.</a>
+          </p>
+        </div>
+        <div class="little-container">
+          <img
+            class="square-image"
+            src="assets/newspapers.jpeg"
+            alt="newspapers"
+          />
+        </div>
       </div>
-      <p>Don't have an account? <a href="register.html">Register here.</a></p>
     </main>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 

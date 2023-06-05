@@ -1,0 +1,72 @@
+.little-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @media (max-width: 900px) {
+    margin-top: 80px;
+  }
+}
+
+.auth-wrapper {
+  min-width: 400px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @media (max-width: 900px) {
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+  }
+}
+
+.auth-title {
+  font-size: 36px;
+  line-height: 42px;
+  font-family: 'Bodoni Moda', serif;
+  margin-bottom: 42px;
+  @media (max-width: 900px) {
+    text-align: center;
+  }
+}
+
+.auth-input {
+  width: 100%;
+  max-width: 470px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.auth-button {
+  background-color: #262626;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 470px;
+  transition: all 0.2s linear;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.auth-button:hover {
+  background-color: #71797e;
+}
+
+.square-image {
+  aspect-ratio: 1/1;
+  width: 100%;
+  border: 3px solid #262626;
+  @media (max-width: 900px) {
+    max-width: 300px;
+    margin-bottom: 32px;
+  }
+}

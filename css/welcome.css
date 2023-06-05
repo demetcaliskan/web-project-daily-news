@@ -15,15 +15,6 @@
   margin-bottom: 16px;
 }
 
-.display-image {
-  border-radius: 4px;
-  height: calc(100vh - 200px);
-  @media (max-width: 900px) {
-    height: auto;
-    width: 100%;
-  }
-}
-
 .bullet-points-title {
   font-family: 'Bodoni Moda', serif;
   color: #262626;
