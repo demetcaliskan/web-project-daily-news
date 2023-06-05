@@ -15,14 +15,33 @@ firebase.initializeApp(firebaseConfig)
 const auth = firebase.auth()
 const database = firebase.database()
 
+function logout() {
+  auth
+    .signOut()
+    .then(() => {
+      alert('Bye :(')
+      window.location.assign('/welcome.html')
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
 function checkAuth() {
   auth.onAuthStateChanged((user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/v8/firebase.User
-      console.log('user', user)
       var uid = user.uid
-      logJSONData()
+      const database_ref = database.ref('users')
+      database_ref
+        .child(uid)
+        .get()
+        .then((snap) => {
+          const userData = snap.val()
+          logJSONData(userData)
+        })
+
       // ...
     } else {
       // User is signed out
@@ -30,6 +49,20 @@ function checkAuth() {
       window.location.assign('/welcome.html')
     }
   })
+}
+
+function displayWeather(weather, userData) {
+  const temp = weather.current.temp
+  const state = weather.current.weather[0].description
+  const weatherDiv = document.getElementById('weather')
+  const weatherTemp = document.createElement('p')
+  const weatherTitle = document.createElement('p')
+  const userTitle = document.createElement('p')
+  userTitle.innerHTML = userData.full_name
+  weatherTemp.innerHTML = `${temp} °C`
+  weatherTitle.innerHTML = state
+  weatherDiv.append(weatherTemp)
+  weatherDiv.append(weatherTitle)
 }
 
 function displayNews(articles) {
@@ -45,10 +78,16 @@ function displayNews(articles) {
   }
 }
 
-async function logJSONData() {
-  const url =
+async function logJSONData(userData) {
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${userData.location.lat}&lon=${userData.location.lng}&units=metric&appid=e7466bf20cece8363cf34ef99d82a053`
+  await fetch(weatherUrl, {
+    method: 'GET',
+  })
+    .then((response) => response.json())
+    .then((data) => displayWeather(data, userData))
+  const newsUrl =
     'https://api.newscatcherapi.com/v2/latest_headlines?countries=TR&lang=tr&when=24h'
-  await fetch(url, {
+  await fetch(newsUrl, {
     method: 'GET',
     headers: {
       'x-api-key': 'cnDKBtGz9fNseStWAhMGnQgC1dT7mahtZkkKAfJXt-4',

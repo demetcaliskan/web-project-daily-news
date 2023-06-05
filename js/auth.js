@@ -55,6 +55,7 @@ function register() {
 
       // DOne
       alert('User Created!!')
+      window.location.assign('/location.html')
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors
@@ -97,6 +98,7 @@ function login() {
 
       // DOne
       alert('User Logged In!!')
+      window.location.assign('/index.html')
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors

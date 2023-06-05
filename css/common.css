@@ -75,6 +75,7 @@ main {
   color: #262626;
   transition: all 0.2s linear;
   position: relative;
+  cursor: pointer;
 }
 .header-nav-item::before {
   content: '';

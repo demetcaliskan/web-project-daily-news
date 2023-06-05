@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
-    <title>Demet Çalışkan</title>
+    <title>Daily Local News</title>
   </head>
   <body>
     <header class="sticky-header">
@@ -18,11 +18,14 @@
         <a class="header-nav-item" href="contact.html" title="contact"
           >Contact</a
         >
-        <a class="header-nav-item" href="#" title="logout">Logout</a>
+        <span class="header-nav-item" onclick="logout()" title="logout"
+          >Logout</span
+        >
       </nav>
     </header>
     <main>
       <h1>Welcome</h1>
+      <div id="weather"></div>
       <div id="news"></div>
     </main>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
