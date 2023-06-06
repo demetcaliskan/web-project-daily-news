@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/profile.css" />
+    <title>Daily Local News | Profile</title>
+  </head>
+  <body>
+    <header class="sticky-header">
+      <a class="header-logo" href="index.html">Daily Local News</a>
+      <nav class="header-nav">
+        <a class="header-nav-item" href="index.html" title="profile">News</a>
+        <a class="header-nav-item" href="contact.html" title="contact"
+          >Contact</a
+        >
+        <span class="header-nav-item" onclick="logout()" title="logout"
+          >Logout</span
+        >
+      </nav>
+    </header>
+    <main class="container">
+      <div id="profile-container" class="profile-container">
+        <p class="profile-input-label">Your email:</p>
+        <input id="email" class="profile-input" value="email" disabled />
+        <p class="profile-input-label">Your full name:</p>
+        <input id="name" class="profile-input" value="name" disabled />
+        <p
+          id="change-name"
+          class="profile-input-change"
+          onclick="changeNameEnabled()"
+        >
+          Change your name
+        </p>
+        <p class="profile-input-label">Your location:</p>
+        <input id="location" class="profile-input" value="location" disabled />
+        <a class="profile-input-change" href="location.html"
+          >Change your location</a
+        >
+      </div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>
