@@ -8,6 +8,7 @@
   justify-content: flex-start;
   @media (max-width: 767px) {
     padding-top: 120px;
+    min-height: calc(100vh - 182px);
   }
 }
 

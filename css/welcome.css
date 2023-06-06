@@ -3,6 +3,11 @@
   line-height: 100px;
   color: #262626;
   margin-bottom: 52px;
+  @media (max-width: 767px) {
+    margin-bottom: 32px;
+    font-size: 52px;
+    line-height: 64px;
+  }
 }
 
 .welcome-description {
@@ -13,6 +18,10 @@
   line-height: 58px;
   max-width: 900px;
   margin-bottom: 16px;
+  @media (max-width: 767px) {
+    font-size: 36px;
+    line-height: 42px;
+  }
 }
 
 .bullet-points-title {
@@ -23,6 +32,10 @@
   line-height: 34px;
   margin-bottom: 28px;
   color: #fff;
+  @media (max-width: 767px) {
+    font-size: 28px;
+    line-height: 32px;
+  }
 }
 
 .bullet-point {
@@ -33,6 +46,10 @@
   line-height: 26px;
   margin-bottom: 8px;
   color: #fff;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
 .grid-display {

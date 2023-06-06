@@ -96,6 +96,43 @@ main {
   transform: scaleX(1);
 }
 
+.mobile-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 12px;
+  align-items: center;
+  justify-content: center;
+  background: #262626;
+  @media (min-width: 767px) {
+    display: none;
+  }
+}
+
+.footer-tag {
+  font-weight: 300;
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-nav-item {
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+}
+
 .container {
   width: 100%;
   padding: 40px;
