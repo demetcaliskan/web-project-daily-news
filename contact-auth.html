@@ -5,29 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
-    <link rel="stylesheet" type="text/css" href="./css/home.css" />
-    <title>Daily Local News</title>
+    <link rel="stylesheet" type="text/css" href="./css/contact.css" />
+    <title>Daily Local News | Contact Us</title>
   </head>
-  <body style="background: #111111">
+  <body>
     <header class="sticky-header">
       <a class="header-logo" href="index.html">Daily Local News</a>
       <nav class="header-nav">
+        <a class="header-nav-item" href="index.html" title="contact">News</a>
         <a class="header-nav-item" href="profile.html" title="profile"
           >Profile</a
-        >
-        <a class="header-nav-item" href="contact-auth.html" title="contact"
-          >Contact</a
         >
         <span class="header-nav-item" onclick="logout()" title="logout"
           >Logout</span
         >
       </nav>
     </header>
-    <main class="container" style="background: #111111">
-      <div class="col-layout" style="background: #111111">
-        <h1 id="welcome" class="home-title"></h1>
-        <div id="weather" class="weather-container"></div>
-        <div id="news" class="news-container"></div>
+    <main id="contact" class="container">
+      <div class="row-layout">
+        <img src="assets/contact.jpg" class="display-image" />
+        <div id="form" class="col-layout contact-form">
+          <h1>Contact Us</h1>
+          <input
+            id="contact-name"
+            class="contact-form-input"
+            type="text"
+            placeholder="Your name..."
+            disabled
+          />
+          <input
+            id="contact-email"
+            class="contact-form-input"
+            type="email"
+            placeholder="Your email..."
+            disabled
+          />
+          <textarea
+            class="contact-form-text-area"
+            placeholder="Your message..."
+          ></textarea>
+          <button class="contact-form-submit" onclick="submitFunction()">
+            Contact Us
+          </button>
+        </div>
       </div>
     </main>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
@@ -36,6 +56,6 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/contact-auth.js"></script>
   </body>
 </html>
