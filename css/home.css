@@ -3,7 +3,11 @@
   font-weight: 400;
   font-size: 36px;
   line-height: 48px;
-  color: #262626;
+  color: #d8d8d8;
+  margin-top: 40px;
+  @media (max-width: 767px) {
+    margin-top: 120px;
+  }
 }
 
 .weather-container {
@@ -15,20 +19,81 @@
 }
 
 .weather-temp {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
-  color: #262626;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: #d8d8d8;
 }
 
 .weather-title {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
-  color: #262626;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 22px;
+  color: #d8d8d8;
 }
 
 .weather-icon {
   width: 64px;
   height: 64px;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  width: 100%;
+  max-width: 900px;
+  align-items: center;
+  justify-content: center;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 22px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 22px;
+  border-bottom: 1px #d8d8d8 solid;
+}
+
+.article-image {
+  width: 200px;
+  height: auto;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.article-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.article-title {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+  color: #d8d8d8;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: all 0.3s linear;
+}
+
+.article-title:hover {
+  color: #fff;
+  font-size: 25px;
+}
+
+.article-description {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 22px;
+  color: #9b9b9b;
 }

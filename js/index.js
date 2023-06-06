@@ -81,12 +81,28 @@ function displayNews(articles) {
   const newsDiv = document.getElementById('news')
   for (i = 0; i < articles.length; i++) {
     const article = articles[i]
-    const articleDiv = document.createElement('div')
-    const title = document.createElement('a')
-    title.innerHTML = article.title
-    title.href = article.link
-    articleDiv.append(title)
-    newsDiv.appendChild(articleDiv)
+    if (article.author) {
+      const articleContainer = document.createElement('div')
+      const articleImage = document.createElement('img')
+      const articleContentWrapper = document.createElement('div')
+      const title = document.createElement('a')
+      const description = document.createElement('p')
+      articleImage.src = article.media
+      title.innerHTML = article.title
+      title.href = article.link
+      title.target = '_blank'
+      description.innerText = article.excerpt
+      articleContainer.classList.add('article-container')
+      articleContentWrapper.classList.add('article-content-wrapper')
+      articleImage.classList.add('article-image')
+      title.classList.add('article-title')
+      description.classList.add('article-description')
+      articleContentWrapper.append(title)
+      articleContentWrapper.append(description)
+      articleContainer.append(articleImage)
+      articleContainer.append(articleContentWrapper)
+      newsDiv.appendChild(articleContainer)
+    }
   }
 }
 
@@ -102,7 +118,7 @@ async function logJSONData(userData) {
   await fetch(newsUrl, {
     method: 'GET',
     headers: {
-      'x-api-key': 'cnDKBtGz9fNseStWAhMGnQgC1dT7mahtZkkKAfJXt-4',
+      'x-api-key': 'kYXqLROaaj4LPSZFzZ6sPsc7l0pCEhYgjLm4uYGT4sE',
     },
   })
     .then((response) => response.json())
