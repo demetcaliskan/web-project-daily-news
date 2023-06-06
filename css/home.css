@@ -6,7 +6,7 @@
   color: #d8d8d8;
   margin-top: 40px;
   @media (max-width: 767px) {
-    margin-top: 120px;
+    margin-top: 80px;
   }
 }
 
@@ -16,6 +16,12 @@
   align-items: center;
   justify-content: flex-start;
   column-gap: 8px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: flex-start;
+    justify-content: center;
+  }
 }
 
 .weather-temp {
@@ -23,6 +29,10 @@
   font-size: 20px;
   line-height: 22px;
   color: #d8d8d8;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
 }
 
 .weather-title {
@@ -30,11 +40,19 @@
   font-size: 20px;
   line-height: 22px;
   color: #d8d8d8;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
 }
 
 .weather-icon {
   width: 64px;
   height: 64px;
+  @media (max-width: 767px) {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .news-container {
@@ -56,6 +74,13 @@
   justify-content: flex-start;
   padding: 22px;
   border-bottom: 1px #d8d8d8 solid;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    padding: 8px;
+    column-gap: 8px;
+    row-gap: 8px;
+    padding-bottom: 22px;
+  }
 }
 
 .article-image {
@@ -64,6 +89,14 @@
   aspect-ratio: 3/2;
   object-fit: cover;
   border-radius: 8px;
+  @media (max-width: 900px) {
+    width: 120px;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 12px;
+  }
 }
 
 .article-content-wrapper {

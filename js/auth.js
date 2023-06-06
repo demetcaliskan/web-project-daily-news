@@ -52,7 +52,6 @@ function register() {
         .ref('users/' + user.uid)
         .set(user_data)
         .then(() => {
-          alert('User Created!!')
           window.location.assign('/location.html')
         })
         .catch((err) => {
@@ -102,7 +101,6 @@ function login() {
       database_ref.child('users/' + user.uid).update(user_data)
 
       // DOne
-      alert('User Logged In!!')
       window.location.assign('/index.html')
     })
     .catch(function (error) {

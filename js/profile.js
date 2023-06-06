@@ -83,7 +83,6 @@ function updateName() {
     .child(user.uid)
     .update({ full_name: nameValue })
     .then(() => {
-      alert('yeyy name updated!')
       location.reload()
     })
     .catch((err) => {

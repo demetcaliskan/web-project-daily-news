@@ -118,7 +118,7 @@ async function logJSONData(userData) {
   await fetch(newsUrl, {
     method: 'GET',
     headers: {
-      'x-api-key': 'kYXqLROaaj4LPSZFzZ6sPsc7l0pCEhYgjLm4uYGT4sE',
+      'x-api-key': 'YuNiWRZEOUJThiEe6uXCr6aI-0ht2deBPmXLDZhOUhQ',
     },
   })
     .then((response) => response.json())

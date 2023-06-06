@@ -110,7 +110,6 @@ function handleLocation(user) {
     .child(user.uid)
     .update(user_data)
     .then(() => {
-      alert('yeyy location pickedd!')
       window.location.assign('/index.html')
     })
     .catch((err) => {
